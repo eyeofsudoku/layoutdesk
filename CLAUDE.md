@@ -1,6 +1,6 @@
 # Writing for the DTP Services Berlin work journal
 
-This repo publishes Onur's work journal (Bear Blog) for DTP Services Berlin. Use these rules for every new article.
+This repo publishes Layout Desk (layoutdesk.bearblog.dev), Onur's work journal for DTP Services Berlin. Use these rules for every new article.
 
 ## What an article is
 

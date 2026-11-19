@@ -35,14 +35,14 @@ jobs:
         run: python publish.py blog
         env:
           BEAR_API_KEY: ${{ secrets.BEAR_API_KEY }}
-          BEAR_SUBDOMAIN: ${{ vars.BEAR_SUBDOMAIN }}
+          BEAR_SUBDOMAIN: layoutdesk
 
       - name: Posts
         if: github.event_name == 'push' || inputs.job == 'posts'
         run: python publish.py posts
         env:
           BEAR_API_KEY: ${{ secrets.BEAR_API_KEY }}
-          BEAR_SUBDOMAIN: ${{ vars.BEAR_SUBDOMAIN }}
+          BEAR_SUBDOMAIN: layoutdesk
 
       - name: Remember what is published
         run: |

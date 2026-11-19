@@ -1,6 +1,6 @@
-# dtp-journal
+# Layout Desk
 
-The work journal of DTP Services Berlin, published to Bear Blog through the Bear API.
+layoutdesk.bearblog.dev: the work journal of DTP Services Berlin, published to Bear Blog through the Bear API.
 
 - `posts/`: one Markdown file per article, with a short header (title, slug, date, tags, meta_description).
   The `date` can be in the past; Bear shows the post under that date.
@@ -9,7 +9,7 @@ The work journal of DTP Services Berlin, published to Bear Blog through the Bear
 - `posts/published.json`: written by the workflow; links each slug to its Bear post. Don't edit by hand.
 
 Every push that changes a post or `blog.json` publishes automatically.
-Settings: secret `BEAR_API_KEY` (the new blog's key) and variable `BEAR_SUBDOMAIN`.
+Settings: repo secret `BEAR_API_KEY` (the key of the layoutdesk blog).
 
 House rules for articles: real jobs only, never a client name or anything that identifies one,
 first person "I" (never "we"), UK English, no em dashes, one or two links to dtp-services.de
