@@ -6,6 +6,8 @@ tags: [arabic, pdf-accessibility, nvda, pac]
 meta_description: A PDF that passed the PAC checker still had the wrong document language. How a screen reader test caught it, and two more Arabic PDF lessons.
 ---
 
+The first properly grey week of October: rain on the window all day, and the radiator clicking on for the first time since spring. Perfect weather for staring at tag trees.
+
 I like green ticks as much as anyone. PAC, the free PDF/UA checker, had given my file a clean report, and I was about to call it done.
 
 Then I opened the PDF with NVDA, the free screen reader, and it started reading English text with an Arabic voice. It sounded like a robot trying very hard to be polite in the wrong language.

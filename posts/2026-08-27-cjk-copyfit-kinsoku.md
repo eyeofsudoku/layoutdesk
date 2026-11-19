@@ -6,7 +6,7 @@ tags: [cjk, indesign, multilingual-dtp]
 meta_description: Why character counts mislead when fitting Chinese and Japanese text in InDesign, and why a kinsoku table only works once it is actually set.
 ---
 
-This week I fitted Chinese and Japanese text into a layout that was designed for English. Sidebars, cards, a few tight boxes with fixed heights. The usual brief: same design, every language, nothing spills over.
+Late August in Berlin. Half the city is on holiday, the U-Bahn suddenly has free seats, and the air in my office stands still by three in the afternoon. A good week for quiet, fiddly work, and I had some: fitting Chinese and Japanese text into a layout that was designed for English. Sidebars, cards, a few tight boxes with fixed heights. The usual brief: same design, every language, nothing spills over.
 
 My first instinct was the one most of us have. English text is 300 characters, the Japanese is 180, so there is plenty of room. Right?
 

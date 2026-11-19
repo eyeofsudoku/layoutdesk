@@ -6,19 +6,21 @@ tags: [indesign, idml, translation, pdf-accessibility]
 meta_description: An IDML round trip through a translation tool damaged the same hyperlinks in every language. What went wrong, how I found it, and the check I now run before any PDF work.
 ---
 
+Mid-September, the first morning this year I went back for a jacket after two steps out of the door. Translated files had come back overnight, and I started the day with coffee and what I expected to be a routine check.
+
 Some bugs are polite enough to appear once. This one showed up in every language, in the same places, every single time.
 
 The job was a multilingual document: InDesign source, text sent out for translation as IDML, translated IDML back, then accessible PDFs for each language. A very normal pipeline. The links in the English file were fine. In the translated files they were not.
 
 ## What I found
 
-When I counted, the damage fell into three groups, and the numbers were identical per language:
+When I counted, the damage fell into three groups, and the count was identical in every language:
 
-- 20 links pointed to the wrong target.
-- 12 link addresses were encoded twice, so a space that should read `%20` came back as `%2520` and the link went nowhere.
-- 102 links that were meant to be hidden (their frames invisible in the PDF) came back visible.
+- A couple of dozen links pointed to the wrong target.
+- About a dozen link addresses were encoded twice, so a space that should read `%20` came back as `%2520` and the link went nowhere.
+- Around a hundred links that were meant to be hidden (their frames invisible in the PDF) came back visible.
 
-On top of that, eight links per language arrived with no destination at all. They looked like links in InDesign and did nothing in the PDF.
+On top of that, a handful of links per language arrived with no destination at all. They looked like links in InDesign and did nothing in the PDF.
 
 The pattern was the giveaway. Random human mistakes don’t repeat with the same count in every language. Something in the round trip itself was doing this, every time, in the same way. In this case the translation tool's IDML filter had trouble with a particular way the links were nested in the file.
 

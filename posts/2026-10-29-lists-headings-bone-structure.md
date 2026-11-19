@@ -6,6 +6,8 @@ tags: [pdf-accessibility, tagging, headings, lists]
 meta_description: A simple habit for PDF remediation: map a document's lists and headings before tagging, then compare at the end. Plus three heading rules that catch most outline errors.
 ---
 
+The clocks went back last weekend, and my body still hasn't noticed. I'm up an hour early, it's dark by five, and the dog looks at me as if I've lost my mind. At least the early hours are quiet, which suits what I spent them on: lists.
+
 Lists are sneaky. They look fine on the page, they pass the automatic checks, and then a screen reader announces "list of 3 items" for something that clearly has seven.
 
 I had one of those moments on a recent job, and it changed how I start every remediation.

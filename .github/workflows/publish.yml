@@ -3,7 +3,7 @@ name: Publish journal
 on:
   push:
     branches: [main]
-    paths: ["posts/*.md", "blog.json"]
+    paths: ["posts/*.md", "blog.json", "theme/*.css"]
   workflow_dispatch:
     inputs:
       job:

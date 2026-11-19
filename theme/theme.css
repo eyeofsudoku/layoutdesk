@@ -1,0 +1,330 @@
+/* ------------------------------------------------------------------
+   DTP Services Berlin work journal: theme
+   Colours follow dtp-services.de. Light by default, dark when the
+   reader's device is set to dark mode. Edit here, then push: the
+   workflow sends fonts.css + theme.css to Bear as the blog's CSS.
+   ------------------------------------------------------------------ */
+
+:root {
+    --width: 720px;
+    --font: "DTP Alternates", "Montserrat Alternates", "Montserrat", Arial, sans-serif;
+    --mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+    --bg: #ffffff;
+    --heading: #1a1a2e;
+    --text: #2d2d4e;
+    --muted: #5b6170;
+    --line: #d3d9e3;
+    --panel: #e8eef6;
+    --link: #2563a8;
+    --link-line: #93b7e0;
+    --visited: #5b4a9e;
+    --gold: #b45309;
+    --code-bg: #eef2f8;
+    --focus: #2563a8;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0e1524;
+        --heading: #f1f3f8;
+        --text: #d3d8e3;
+        --muted: #9aa3b5;
+        --line: #2a3550;
+        --panel: #172038;
+        --link: #8fb8ec;
+        --link-line: #3f5f8f;
+        --visited: #b9a8ec;
+        --gold: #f5b54a;
+        --code-bg: #172038;
+        --focus: #8fb8ec;
+    }
+}
+
+html {
+    background: var(--bg);
+}
+
+body {
+    font-family: var(--font);
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 1.85;
+    color: var(--text);
+    background: var(--bg);
+    max-width: var(--width);
+    margin: 0 auto;
+    padding: 32px 22px 24px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- header ---------- */
+header {
+    padding-bottom: 18px;
+    margin-bottom: 26px;
+    border-bottom: 1px solid var(--line);
+}
+
+.title {
+    text-decoration: none;
+}
+
+.title h1 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--heading);
+    margin: 0 0 6px;
+}
+
+nav p {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 18px;
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+}
+
+nav a {
+    color: var(--muted);
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: var(--link);
+}
+
+/* ---------- text ---------- */
+h1, h2, h3, h4 {
+    font-family: var(--font);
+    font-weight: 700;
+    color: var(--heading);
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+}
+
+main > h1 {
+    font-size: clamp(1.7rem, 4.6vw, 2.3rem);
+    margin: 0.4em 0 0.2em;
+    text-wrap: balance;
+}
+
+h2 {
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    margin: 2.1em 0 0.5em;
+}
+
+h3 {
+    font-size: 1.1rem;
+    margin: 1.8em 0 0.4em;
+}
+
+p {
+    margin: 0 0 1.15em;
+}
+
+strong, b {
+    font-weight: 700;
+    color: var(--heading);
+}
+
+/* in-text links: underlined, never colour alone */
+main a {
+    color: var(--link);
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: var(--link-line);
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+}
+
+main a:hover {
+    text-decoration-color: var(--link);
+}
+
+a:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+    border-radius: 3px;
+}
+
+ul, ol {
+    padding-left: 1.3em;
+    margin: 0 0 1.2em;
+}
+
+li {
+    margin-bottom: 0.35em;
+}
+
+li::marker {
+    color: var(--link);
+}
+
+/* quotes as a tinted panel (no side stroke) */
+blockquote {
+    margin: 1.6em 0;
+    padding: 16px 20px;
+    background: var(--panel);
+    border-radius: 12px;
+    color: var(--heading);
+}
+
+blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+code {
+    font-family: var(--mono);
+    font-size: 0.88em;
+    background: var(--code-bg);
+    color: var(--heading);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+pre, .highlight, .code {
+    font-family: var(--mono);
+    font-size: 0.86em;
+    line-height: 1.6;
+    background: var(--code-bg);
+    border-radius: 10px;
+    padding: 14px 16px;
+    overflow-x: auto;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+}
+
+hr {
+    border: 0;
+    width: 56px;
+    height: 3px;
+    background: var(--link);
+    border-radius: 2px;
+    margin: 2.6em 0;
+    opacity: 0.85;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92em;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--line);
+}
+
+/* ---------- post page ---------- */
+time {
+    font-family: var(--font);
+    font-style: normal;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+main > p:first-of-type i {
+    font-style: normal;
+}
+
+.tags {
+    margin-top: 2.4em;
+    font-size: 0.8rem;
+}
+
+.tags a {
+    display: inline-block;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--muted);
+    background: var(--panel);
+    border-radius: 999px;
+    padding: 2px 12px;
+    margin: 0 6px 6px 0;
+}
+
+.tags a:hover {
+    color: var(--link);
+}
+
+/* toast (upvote) button, kept quiet */
+.upvote-button {
+    color: var(--muted) !important;
+}
+
+/* ---------- post lists ---------- */
+ul.blog-posts {
+    list-style: none;
+    padding: 0;
+    margin: 1.4em 0 2em;
+}
+
+ul.blog-posts li {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 2px;
+    padding: 16px 0;
+    margin: 0;
+    border-bottom: 1px solid var(--line);
+}
+
+ul.blog-posts li::marker {
+    content: none;
+}
+
+ul.blog-posts li span {
+    flex: none;
+}
+
+ul.blog-posts li a {
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: var(--heading);
+    text-decoration: none;
+    line-height: 1.35;
+}
+
+ul.blog-posts li a:hover {
+    color: var(--link);
+}
+
+ul.blog-posts li a:visited {
+    color: var(--heading);
+}
+
+/* ---------- footer ---------- */
+footer {
+    margin-top: 48px;
+    padding: 22px 0 8px;
+    border-top: 1px solid var(--line);
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-align: left;
+}
+
+footer a {
+    color: var(--muted);
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 16px;
+        padding: 22px 18px 18px;
+    }
+}

@@ -3,7 +3,7 @@
 Publish the work journal to Bear.
 
   python publish.py posts   -> create or update every post in posts/*.md
-  python publish.py blog    -> apply blog.json (title, home page, navigation)
+  python publish.py blog    -> apply blog.json (title, home page, navigation) and the theme
   add --dry-run to print what would be sent
 
 Each post is a Markdown file with a small header:
@@ -131,6 +131,8 @@ def job_posts(bear):
 
 def job_blog(bear):
     cfg = json.loads((HERE / "blog.json").read_text(encoding="utf-8"))
+    theme = HERE / "theme"
+    cfg["custom_styles"] = (theme / "fonts.css").read_text(encoding="utf-8") + "\n" + (theme / "theme.css").read_text(encoding="utf-8")
     bear.call("PATCH", "blog/", cfg)
     print("Blog settings updated:", ", ".join(cfg))
 

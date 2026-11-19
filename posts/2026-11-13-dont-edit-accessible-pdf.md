@@ -6,6 +6,8 @@ tags: [pdf-accessibility, workflow, corrections]
 meta_description: Why small edits to a remediated PDF can break its accessibility, and the correction workflow that saves everyone from paying for remediation twice.
 ---
 
+Mid-November. It's dark by half past four, the first Christmas lights are going up much too early, and everyone suddenly wants their documents finished "before the end of the year".
+
 The email came a few days after delivery. Friendly, short, and very reasonable: a number on the cover was wrong. Could someone just change it in the PDF?
 
 Someone could. It's a two-minute edit in Acrobat. And that's exactly why I asked them not to.
