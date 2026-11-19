@@ -26,19 +26,29 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      - name: Check the key
+        id: key
+        run: |
+          if [ -z "${{ secrets.BEAR_API_KEY }}" ]; then
+            echo "::warning::No BEAR_API_KEY secret yet, nothing published."
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
       - name: Blog settings
-        if: github.event_name == 'push' || inputs.job == 'blog'
+        if: steps.key.outputs.ok == 'true' && (github.event_name == 'push' || inputs.job == 'blog')
         run: python publish.py blog
         env:
           BEAR_API_KEY: ${{ secrets.BEAR_API_KEY }}
           BEAR_SUBDOMAIN: layoutdesk
 
       - name: Posts
-        if: github.event_name == 'push' || inputs.job == 'posts'
+        if: steps.key.outputs.ok == 'true' && (github.event_name == 'push' || inputs.job == 'posts')
         run: python publish.py posts
         env:
           BEAR_API_KEY: ${{ secrets.BEAR_API_KEY }}
