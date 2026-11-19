@@ -109,6 +109,7 @@ def job_posts(bear):
             "published_date": meta["date"],
             "tags": meta.get("tags", []),
             "lang": meta.get("lang", "en"),
+            "discoverable": meta.get("discoverable", "true") != "false",
         }
         if meta.get("meta_description"):
             payload["meta_description"] = meta["meta_description"]
