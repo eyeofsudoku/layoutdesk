@@ -1,0 +1,55 @@
+name: Publish journal
+
+on:
+  push:
+    branches: [main]
+    paths: ["posts/*.md", "blog.json"]
+  workflow_dispatch:
+    inputs:
+      job:
+        description: What to publish
+        type: choice
+        options: [posts, blog]
+        default: posts
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dtp-journal
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Blog settings
+        if: github.event_name == 'push' || inputs.job == 'blog'
+        run: python publish.py blog
+        env:
+          BEAR_API_KEY: ${{ secrets.BEAR_API_KEY }}
+          BEAR_SUBDOMAIN: ${{ vars.BEAR_SUBDOMAIN }}
+
+      - name: Posts
+        if: github.event_name == 'push' || inputs.job == 'posts'
+        run: python publish.py posts
+        env:
+          BEAR_API_KEY: ${{ secrets.BEAR_API_KEY }}
+          BEAR_SUBDOMAIN: ${{ vars.BEAR_SUBDOMAIN }}
+
+      - name: Remember what is published
+        run: |
+          git add posts/published.json 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Record published posts"
+            git push
+          fi

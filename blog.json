@@ -1,0 +1,6 @@
+{
+  "title": "DTP Services Berlin: work journal",
+  "meta_description": "Notes from real multilingual DTP and PDF accessibility jobs: what broke, how it got fixed, and what I check now. By Onur Ilter, DTP Services Berlin.",
+  "nav": "[Home](/) [Journal](/blog/) [Services](https://dtp-services.de/services-overview) [Contact](https://dtp-services.de/contact) [Impressum](https://dtp-services.de/impressum) [Privacy](https://dtp-services.de/privacy-policy)",
+  "content": "I'm Onur, and I run [DTP Services Berlin](https://dtp-services.de): multilingual layout and accessible PDFs, from Arabic to Japanese, InDesign to PDF/UA.\n\nThis journal is where I write down what happens on real jobs. The file that looked fine and wasn't. The checker that said pass. The fix that took ten minutes after a day of looking. Client names stay out; the know-how stays in.\n\n{{ posts }}\n"
+}
