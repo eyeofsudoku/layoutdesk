@@ -82,6 +82,7 @@ Keep this table updated when a post goes live. New posts are dated on the day th
 - `publish.py` talks to the Bear API (`https://bearblog.dev/layoutdesk/api/v1/`). The key is the repo secret `BEAR_API_KEY`; it never goes into chat or files.
 - `.github/workflows/publish.yml` runs on every push to `main` that touches `posts/*.md`, `blog.json` or `theme/*.css`: it applies blog settings + theme, then creates or updates posts. `posts/published.json` (written by the workflow) maps slug → Bear uid so edits update instead of duplicating. Manual run: Actions → Publish journal → Run workflow (posts or blog).
 - Posts are `publish: true`, `discoverable: true` (Bear Discover feed) and `lang: en` by default; a header line `publish: false` keeps a post as a draft.
+- The `date` must be in the past (Europe/Berlin time) when you push: Bear hides future-dated posts from the Journal list until that moment.
 - Bear's Cloudflare blocks Python's default User-Agent (error 1010); `publish.py` sends its own.
 - Checking from a Claude session: the shell can reach `https://layoutdesk.bearblog.dev` and the public GitHub API (`api.github.com/repos/eyeofsudoku/layoutdesk/actions/runs`) to confirm a run and the live page. Pushing: attach the repo with add_repo (push access), clone, commit, `git -c push.negotiate=true push`.
 
