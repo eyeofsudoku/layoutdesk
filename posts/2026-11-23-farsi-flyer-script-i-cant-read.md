@@ -1,7 +1,7 @@
 ---
 title: Setting a script I can't read
 slug: farsi-flyer-script-i-cant-read
-date: 2026-11-23T15:00:00+01:00
+date: 2026-11-23T14:00:00+01:00
 tags: [rtl, farsi, indesign, fonts, multilingual-dtp]
 meta_description: A Farsi flyer whose letters fell apart in InDesign. Why the cause was the font, what happened to the phone number, and how I check right-to-left text in a language I don't speak.
 ---
