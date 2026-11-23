@@ -89,6 +89,7 @@ Keep this table updated when a post goes live. New posts are dated on the day th
 ## Blog setup decisions
 
 - Name "Layout Desk", English, first person "I", UK English. Navigation: Home · Journal · Impressum & privacy (link to dtp-services.de/impressum; a business-linked blog needs an Impressum under § 5 DDG, so the author is public and client confidentiality is absolute).
+- Google Search Console: URL-prefix property for https://layoutdesk.bearblog.dev/ (added 2026-11-23), verified by a google-site-verification meta tag in Bear's Header directives. Never remove that tag. Sitemap `sitemap.xml` submitted. After a new post goes live, remind Onur he can request indexing for its URL in URL inspection.
 - Home page text is in `blog.json` (with `{{ posts }}` for the list).
 
 ## Theme
