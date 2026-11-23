@@ -51,12 +51,43 @@ Contact: /contact
 
 ## Article ideas (queue)
 
-- Why I built the text expansion calculator (/resources/text-expansion-calculator): the planning problem it solves. Ask Onur for the real trigger before writing.
-- Why the multilingual DTP risk checker exists (/resources/multilingual-dtp-risk-checker).
-- The project brief generator (/dtp-project-brief-generator): the questions that are always missing at the start of a job.
-- An RTL flyer for a small nonprofit: choosing a Farsi font and the RTL settings that matter (/resources/right-to-left-languages-indesign). No organisation name.
-- Writing alt text for charts and scientific figures (/resources/how-to-write-alt-text-for-charts, /resources/alt-text-scientific-figures).
-- Devanagari in accessible PDFs: confirm the exact composer finding with Onur before writing.
+Suggested order: 2, then 1, then 3. Always ask Onur for the facts marked "needs" before writing; never guess technical details in public.
+
+1. **Why I built a text expansion calculator** → /resources/text-expansion-calculator. Needs: the real trigger from Onur (two or three sentences).
+2. **Setting a script I can't read**: the Farsi flyer for a small nonprofit (Nov 2026): choosing a font and checking RTL text in a language Onur doesn't speak. → /resources/right-to-left-languages-indesign, /resources/fonts-in-multilingual-dtp. No organisation name.
+3. **It looks right, it copies as gibberish**: Hindi/Gujarati InDesign files whose PDF text breaks when copied or read aloud; the free file check before quoting. → /services-overview/multilingual-dtp, /resources/fonts-in-multilingual-dtp, Unicode. Needs: the exact cause and fix from Onur.
+4. **Eleven languages, one small flyer**: what a short multilingual flyer involves (scripts, fonts, length, direction). No client, no language list. → /resources/multilingual-dtp-risk-checker, /resources/text-expansion-in-translation.
+5. **A template is only half a template**: an accessible Word template needs an author guide and a final check. → /services-overview/pdf-accessibility, /resources/process-guides.
+6. **Some files never leave my desk**: confidential client files stay on Onur's own computer; the principle only, no tool names. → /about, /contact.
+7. **Who writes the alt text?**: photos in production, charts by someone who knows the data. → /resources/how-to-write-alt-text-for-charts, /resources/alt-text-scientific-figures.
+8. **The same-day fix**: a small Arabic mark problem in a PDF fixed in an afternoon; small jobs still get the full check. → /dtp-projects/accessible-pdf-sample, PAC. Needs: the exact cause and fix from Onur.
+9. Devanagari in accessible PDFs (composer finding): needs Onur's confirmation before writing; publishing a wrong rule could harm readers' files.
+
+## Published
+
+| Date | Slug | Topic |
+|---|---|---|
+| 2026-08-27 | cjk-copyfit-kinsoku | CJK copyfit by point size × leading; empty kinsoku tables |
+| 2026-09-17 | idml-round-trip-broken-links | IDML round trip through a CAT tool damaging links; link gate before Acrobat |
+| 2026-10-08 | pac-passed-nvda-disagreed | InDesign ME writing ar-SA as document language; PAC vs NVDA; Arabic copy/paste and font version |
+| 2026-10-29 | lists-headings-bone-structure | List "bone structure" check; one H1, no skipped levels, same-level heading rule |
+| 2026-11-13 | dont-edit-accessible-pdf | Why not to edit a remediated PDF; draft-PDF-first correction workflow |
+
+Keep this table updated when a post goes live. New posts are dated on the day they are written (backdating was only for the first five).
+
+## How publishing works
+
+- Blog: https://layoutdesk.bearblog.dev (Bear Blog, upgraded). Repo: github.com/eyeofsudoku/layoutdesk.
+- `publish.py` talks to the Bear API (`https://bearblog.dev/layoutdesk/api/v1/`). The key is the repo secret `BEAR_API_KEY`; it never goes into chat or files.
+- `.github/workflows/publish.yml` runs on every push to `main` that touches `posts/*.md`, `blog.json` or `theme/*.css`: it applies blog settings + theme, then creates or updates posts. `posts/published.json` (written by the workflow) maps slug → Bear uid so edits update instead of duplicating. Manual run: Actions → Publish journal → Run workflow (posts or blog).
+- Posts are `publish: true`, `discoverable: true` (Bear Discover feed) and `lang: en` by default; a header line `publish: false` keeps a post as a draft.
+- Bear's Cloudflare blocks Python's default User-Agent (error 1010); `publish.py` sends its own.
+- Checking from a Claude session: the shell can reach `https://layoutdesk.bearblog.dev` and the public GitHub API (`api.github.com/repos/eyeofsudoku/layoutdesk/actions/runs`) to confirm a run and the live page. Pushing: attach the repo with add_repo (push access), clone, commit, `git -c push.negotiate=true push`.
+
+## Blog setup decisions
+
+- Name "Layout Desk", English, first person "I", UK English. Navigation: Home · Journal · Impressum & privacy (link to dtp-services.de/impressum; a business-linked blog needs an Impressum under § 5 DDG, so the author is public and client confidentiality is absolute).
+- Home page text is in `blog.json` (with `{{ posts }}` for the list).
 
 ## Theme
 
