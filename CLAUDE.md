@@ -51,10 +51,10 @@ Contact: /contact
 
 ## Article ideas (queue)
 
-Suggested order: 2, then 1, then 3. Always ask Onur for the facts marked "needs" before writing; never guess technical details in public.
+Suggested order: 1, then 3. Always ask Onur for the facts marked "needs" before writing; never guess technical details in public.
 
 1. **Why I built a text expansion calculator** → /resources/text-expansion-calculator. Needs: the real trigger from Onur (two or three sentences).
-2. **Setting a script I can't read**: the Farsi flyer for a small nonprofit (Nov 2026): choosing a font and checking RTL text in a language Onur doesn't speak. → /resources/right-to-left-languages-indesign, /resources/fonts-in-multilingual-dtp. No organisation name.
+2. ~~**Setting a script I can't read**~~ (published 2026-11-23): the Farsi flyer for a small nonprofit (Nov 2026): choosing a font and checking RTL text in a language Onur doesn't speak. → /resources/right-to-left-languages-indesign, /resources/fonts-in-multilingual-dtp. No organisation name.
 3. **It looks right, it copies as gibberish**: Hindi/Gujarati InDesign files whose PDF text breaks when copied or read aloud; the free file check before quoting. → /services-overview/multilingual-dtp, /resources/fonts-in-multilingual-dtp, Unicode. Needs: the exact cause and fix from Onur.
 4. **Eleven languages, one small flyer**: what a short multilingual flyer involves (scripts, fonts, length, direction). No client, no language list. → /resources/multilingual-dtp-risk-checker, /resources/text-expansion-in-translation.
 5. **A template is only half a template**: an accessible Word template needs an author guide and a final check. → /services-overview/pdf-accessibility, /resources/process-guides.
@@ -72,6 +72,7 @@ Suggested order: 2, then 1, then 3. Always ask Onur for the facts marked "needs"
 | 2026-10-08 | pac-passed-nvda-disagreed | InDesign ME writing ar-SA as document language; PAC vs NVDA; Arabic copy/paste and font version |
 | 2026-10-29 | lists-headings-bone-structure | List "bone structure" check; one H1, no skipped levels, same-level heading rule |
 | 2026-11-13 | dont-edit-accessible-pdf | Why not to edit a remediated PDF; draft-PDF-first correction workflow |
+| 2026-11-23 | farsi-flyer-script-i-cant-read | Farsi flyer: missing Arabic-script glyphs in the font, pasted bidi marks, reversed phone groups, checking RTL text without reading it |
 
 Keep this table updated when a post goes live. New posts are dated on the day they are written (backdating was only for the first five).
 
